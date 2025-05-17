@@ -1,0 +1,59 @@
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>
+			{% block title %}
+			首頁
+			{% endblock %}
+		</title>
+
+		<link href="{{ url_for('static',filename='css/index.css')  }}" rel="stylesheet">
+        {% block css%}
+        {% endblock %}
+        {% block  js %}
+        {% endblock %}
+
+	</head>
+    
+
+	<body>
+
+		<div id="wrapper">
+
+			<div id="banner">
+				
+			</div>
+
+			<div id="menu">
+				<ul>
+					<li><a href="/index">首頁</a></li>
+					<li><a href="/news">新聞</a></li>
+					<li><a href="/product">產品</a></li>
+					<li><a href="/shoes">鞋子</a></li>
+					<li><a href="/clothes">服飾</a></li>
+					<li><a href="/message">留言</a></li>
+					<li><a href="/display">圖表</a></li>
+				</ul>
+
+			</div>
+
+			<div id="content">
+				{% block content %}
+				{% endblock %}
+
+			</div>
+
+			<div id="footer">
+				我的爬蟲
+
+			</div>
+
+		</div>
+
+
+	</body>
+
+
+
+</html>

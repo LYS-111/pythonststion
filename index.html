@@ -1,0 +1,71 @@
+{% extends 'Base.html' %}
+
+{% block title %}
+首頁
+{% endblock%}
+{% block content %}
+				
+<div id="indexleft">
+
+	{% for n in daf%}
+		<div class="dafarea">
+			<img src="{{ n[4] }}">
+			<p>{{n[2]}}</p>
+			<span>NT:${{n[5]}}</span>
+		</div>
+
+	{% endfor %}
+</div>
+<div id="indexmiddle">
+
+	{% for n in cts%}
+		<div class="ctsarea">
+			<a href="{{n[3]}}">
+			<img src="{{ n[4] }}">
+			<p>{{n[2]}}</p>
+			</a>
+			
+		</div>
+	{% endfor %}
+
+	{%for n in tvbs%}
+
+		<div class="ctsarea">
+			<a href="{{n[3]}}">
+			<img src="{{ n[4] }}">
+			<p>{{n[2]}}</p>
+			</a>
+			
+		</div>
+	{% endfor %}
+
+	{%for n in sent%}
+
+		<div class="ctsarea">
+			<a href="{{n[3]}}">
+			<img src="{{ n[4] }}">
+			<p>{{n[2]}}</p>
+			</a>
+			
+		</div>
+	{% endfor %}
+
+</div>
+
+<div id="indexright">
+
+	{% for n in seoul %}
+		<div class="dafarea">
+			<a href="{{n[3]}}">
+			<img src="{{ n[4] }}">
+			<p>{{n[2]}}</p>
+			</a>
+			
+		</div>
+	{% endfor %}	
+</div>
+	
+
+{% endblock %}
+
+

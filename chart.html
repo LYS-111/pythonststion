@@ -1,0 +1,96 @@
+{% extends 'Base.html' %}
+
+{% block title %}
+圖表
+{% endblock %}
+
+{% block css %}
+<style>
+  .chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+  }
+
+  #myChart {
+    max-width: 500px;
+    max-height: 500px;
+  }
+</style>
+
+{% endblock %}
+
+
+{% block js %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+{% endblock %}
+
+
+
+{% block content %}
+<div class="chart-container">
+  <canvas id="myChart" width="500" height="500"></canvas>
+</div>
+
+
+
+<script>
+  const ctx = document.getElementById('myChart');
+
+  var labels = {{ labels | safe }}
+  var data = {{ data | safe }}
+
+  
+  const total = data.reduce((a, b) => a + b, 0);
+
+  new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: labels,
+      datasets: [{
+        label: '材質圖表',
+        data: data,
+        backgroundColor: [
+          '#4FC3F7', '#FF8A65', '#81C784', '#BA68C8', '#FFD54F'
+        ],
+        borderColor: '#fff',
+        borderWidth: 2
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: {
+            font: {
+              size: 14
+            }
+          }
+        },
+        datalabels: {
+          color: '#000',
+          formatter: function(value, context) {
+            const percentage = (value / total * 100).toFixed(1);
+            return `${context.chart.data.labels[context.dataIndex]}：${percentage}%`;
+          },
+          anchor: 'center',
+          align: 'center',
+          font: {
+            weight: 'bold',
+            size: 14
+          }
+        }
+      }
+    },
+    plugins: [ChartDataLabels]
+  });
+</script>
+
+{% endblock %}
+
+
+
+

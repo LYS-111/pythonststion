@@ -1,0 +1,83 @@
+body{
+	margin:0;
+}
+
+
+
+#banner{
+	height:100px;
+
+	/*這個是註解*/
+}
+
+#menu{
+	height:70px;
+	background-color: #f5c1d9;
+}
+
+#menu ul{
+	line-height: 70px;
+}
+
+
+#menu li{
+	float:left;
+	list-style:none;
+	padding-left: 3em;
+	padding-right:3em;
+	font-size:20px;
+}
+#menu a{
+	color:#000000;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+
+#content{
+	min-height: 600px;
+}
+
+#footer{
+	height: 50px;
+	background-color: #000000;
+	color:#000000;
+	text-align: center;
+	line-height: 50px;
+}
+#indexright{
+	float: left;
+	width: 25%
+}
+
+#indexmiddle{
+	float: left;
+	width: 50%;
+}
+
+#indexleft{
+	float: left;
+	width: 25%;
+}
+
+.dafarea{
+	width: 80%;
+
+}
+
+.dafarea img{
+	width:100%;
+
+}
+
+.ctsarea{
+	width: 32%;
+	height: 300px;
+	float:left;
+
+}
+
+.ctsarea img{
+	width:100%;
+
+}

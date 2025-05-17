@@ -1,0 +1,39 @@
+body{
+	margin:0;
+}
+
+
+
+#banner{
+	height:100px;
+
+	/*這個是註解*/
+}
+
+#menu{
+	height:70px;
+	background-color: #f5c1d9;
+}
+
+#content{
+	min-height: 600px;
+}
+
+#footer{
+	clear: both;
+	height: 50px;
+	background-color: #000000;
+
+}
+
+
+.newsarea{
+	width:18%;
+	float:left;
+	margin:1%;
+	
+}
+
+.newsarea img{
+	width: 100%;
+}
